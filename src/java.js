@@ -2,10 +2,35 @@ function displayTemp(response) {
   let cityElement = document.querySelector("#city");
   let tempElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
+  let backgroundElement = document.querySelector(".weather-box");
+  let backgroundWeather = response.data.weather[0].main;
 
   cityElement.innerHTML = response.data.name;
   tempElement.innerHTML = Math.round(response.data.main.temp) + `°C`;
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  // backgroundElement.style.backgroundImage = "url('./images/weathercloudy.jpg')";
+
+  if (backgroundWeather === "Clouds") {
+    backgroundElement.style.backgroundImage =
+      "url('./images/weathercloudy.jpg')";
+  }
+  if (backgroundWeather === "Clear") {
+    backgroundElement.style.backgroundImage =
+      "url('./images/weathersunny.jpg')";
+  }
+  if (backgroundWeather === "Rain") {
+    backgroundElement.style.backgroundImage = "url('./images/weatherrain.jpg')";
+  }
+  if (backgroundWeather === "Snow") {
+    backgroundElement.style.backgroundImage = "url('./images/weathersnow.jpg')";
+  }
+  if (backgroundWeather === "Thunder") {
+    backgroundElement.style.backgroundImage =
+      "url('./images/weatherthunder.jpg')";
+  }
+  //Double check on "Rain" "Snow" & "Thunder" later. Not sure if those strings are correct.
+
   console.log(response.data);
 }
 
@@ -21,7 +46,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-// search(Toronto);
+search("Toronto");
 
 let searchBar = document.querySelector("#search-form");
 
