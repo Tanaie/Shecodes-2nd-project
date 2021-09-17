@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-box">
+        <form id="search-form" class="mb-3">
+          <div class="row">
+            <div class="col-7">
+              <input
+                type="search"
+                placeholder="Type in a city..."
+                class="form-control s-button"
+                id="city-input"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-5">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-warning w-50 s-button"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="weather-content">
+          <h2 id="city">Toronto</h2>
+          <h1 id="temp">°C</h1>
+
+          <p id="description">Cloudy with a chance of meatballs.</p>
+        </div>
+        <div class="week-forecast" id="forecast"></div>
+      </div>
+    </div>
+    <script src="src/java.js"></script>
+  </body>
+</html>
