@@ -60,6 +60,9 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+}
+
 footer {
   padding-top: 12px;
 }
@@ -88,7 +91,7 @@ footer p {
   font-weight: 500;
 }
 
-#humidity {
+.humidity-title {
   margin-left: 8px;
 }
 

@@ -63,9 +63,8 @@ function displayTemp(response) {
 
   cityElement.innerHTML = response.data.name;
   tempElement.innerHTML = Math.round(response.data.main.temp) + `°C`;
-  windElement.innerHTML =
-    `Wind: ` + Math.round(response.data.wind.speed) + `km/H`;
-  humidityElement.innerHTML = `Humidity: ` + response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed) + `km/H`;
+  humidityElement.innerHTML = response.data.main.humidity + `%`;
   descriptionElement.innerHTML = response.data.weather[0].description;
 
   if (backgroundWeather === "Clouds") {
