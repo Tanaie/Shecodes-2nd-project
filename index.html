@@ -25,8 +25,8 @@
     <div class="container">
       <div class="weather-box">
         <form id="search-form" class="mb-3">
-          <div class="row">
-            <div class="col-7">
+          <div class="row row-edit">
+            <div class="col-6">
               <input
                 type="search"
                 placeholder="Type in a city..."
@@ -35,11 +35,11 @@
                 autocomplete="off"
               />
             </div>
-            <div class="col-5">
+            <div class="col-4">
               <input
                 type="submit"
                 value="Search"
-                class="btn btn-warning w-50 s-button"
+                class="btn btn-light w-50 s-button"
               />
             </div>
           </div>
@@ -47,14 +47,15 @@
         <div class="weather-content">
           <h2 id="city"></h2>
           <h1 id="temp"></h1>
-
+          <span id="wind">Wind: 5km/H</span>
+          <span id="humidity">Humidity: 85%</span>
           <p id="description"></p>
         </div>
       </div>
       <div class="week-forecast" id="forecast"></div>
       <footer>
         <p>
-          Coded by
+          Open source code by
           <a
             href="https://www.linkedin.com/in/hannah-whittingham-51341a4a/"
             target="_blank"

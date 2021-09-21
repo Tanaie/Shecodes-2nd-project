@@ -55,12 +55,17 @@ function getForecast(coordinates) {
 function displayTemp(response) {
   let cityElement = document.querySelector("#city");
   let tempElement = document.querySelector("#temp");
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
   let descriptionElement = document.querySelector("#description");
   let backgroundElement = document.querySelector(".weather-box");
   let backgroundWeather = response.data.weather[0].main;
 
   cityElement.innerHTML = response.data.name;
   tempElement.innerHTML = Math.round(response.data.main.temp) + `°C`;
+  windElement.innerHTML =
+    `Wind: ` + Math.round(response.data.wind.speed) + `km/H`;
+  humidityElement.innerHTML = `Humidity: ` + response.data.main.humidity;
   descriptionElement.innerHTML = response.data.weather[0].description;
 
   if (backgroundWeather === "Clouds") {
