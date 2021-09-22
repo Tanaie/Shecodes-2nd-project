@@ -93,6 +93,63 @@ function displayTemp(response) {
   // This IS ACTIVATING the weekly FORECAST. We're starting here. 1/3 The data has been RECEIVED.
 }
 
+//BLOCK ~~~~~~~~~~~~~~~
+// STEP 3 The stored Data is executed
+function showTemperature(response) {
+  let geoCity = document.querySelector("#city");
+  let geoTemp = document.querySelector("#temp");
+  let geoWind = document.querySelector("#wind");
+  let geoHumidity = document.querySelector("#humidity");
+  let geoDescription = document.querySelector("#description");
+  let backgroundElement = document.querySelector(".weather-box");
+  let backgroundWeather = response.data.weather[0].main;
+
+  geoCity.innerHTML = response.data.name;
+  geoTemp.innerHTML = Math.round(response.data.main.temp) + `°C`;
+  geoWind.innerHTML = Math.round(response.data.wind.speed) + `km/H`;
+  geoHumidity.innerHTML = response.data.main.humidity + `%`;
+  geoDescription.innerHTML = response.data.weather[0].description;
+  if (backgroundWeather === "Clouds") {
+    backgroundElement.style.backgroundImage =
+      "url('./images/weathercloudy.jpg')";
+  }
+  if (backgroundWeather === "Clear") {
+    backgroundElement.style.backgroundImage =
+      "url('./images/weathersunny.jpg')";
+  }
+  if (backgroundWeather === "Rain") {
+    backgroundElement.style.backgroundImage = "url('./images/weatherrain.jpg')";
+  }
+  if (backgroundWeather === "Snow") {
+    backgroundElement.style.backgroundImage = "url('./images/weathersnow.jpg')";
+  }
+  if (backgroundWeather === "Thunder") {
+    backgroundElement.style.backgroundImage =
+      "url('./images/weatherthunder.jpg')";
+  }
+
+  backgroundElement.style.transition = "all 450ms ease-in-out";
+
+  getForecast(response.data.coord);
+}
+
+//STEP 2 Store the desire user location information
+function retrievePosition(position) {
+  console.log(position);
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiEndPoint = "http://api.openweathermap.org/data/2.5/weather?";
+  let apiUrl = `${apiEndPoint}lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+navigator.geolocation.getCurrentPosition(retrievePosition);
+//STEP 1 - Request access to the users current postion.
+
+//BLOCK~~~~~~~~~~~~~~
+
 function search(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
