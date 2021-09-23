@@ -140,7 +140,7 @@ function retrievePosition(position) {
   let longitude = position.coords.longitude;
   let units = "metric";
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiEndPoint = "http://api.openweathermap.org/data/2.5/weather?";
+  let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
   let apiUrl = `${apiEndPoint}lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
