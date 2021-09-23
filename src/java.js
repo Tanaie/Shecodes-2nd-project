@@ -145,8 +145,11 @@ function retrievePosition(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-navigator.geolocation.getCurrentPosition(retrievePosition);
-//STEP 1 - Request access to the users current postion.
+function handleGeo(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+  //STEP 1 - Request access to the users current postion.
+}
 
 //BLOCK~~~~~~~~~~~~~~
 
@@ -162,8 +165,10 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Toronto");
+search("Tokyo");
 
 let searchBar = document.querySelector("#search-form");
+let searchGeo = document.querySelector("#geo-input");
 
 searchBar.addEventListener("submit", handleSubmit);
+searchGeo.addEventListener("click", handleGeo);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SheCodes Weather App: Hannah Whittingham</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,6 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/c5b730c95d.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="src/styles.css" />
   </head>
@@ -26,7 +30,7 @@
       <div class="weather-box">
         <form id="search-form" class="mb-3">
           <div class="row row-edit">
-            <div class="col-6">
+            <div class="col-5">
               <input
                 type="search"
                 placeholder="Type in a city..."
@@ -35,12 +39,17 @@
                 autocomplete="off"
               />
             </div>
+            <!-- I added a form element here. -->
+
             <div class="col-4">
-              <input
+              <button
                 type="submit"
                 value="Search"
-                class="btn btn-light w-50 s-button"
-              />
+                class="s-icon"
+                id="geo-input"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
             </div>
           </div>
         </form>
