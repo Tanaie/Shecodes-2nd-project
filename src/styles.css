@@ -101,6 +101,11 @@ footer p {
   --bs-gutter-x: 0.5rem;
 }
 
+.location-button {
+  --bs-gutter-x: 34rem;
+  --bs-gutter-y: -3.3rem;
+}
+
 #wind,
 #humidity {
   margin-bottom: 3px;

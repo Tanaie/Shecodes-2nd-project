@@ -28,8 +28,8 @@
   <body>
     <div class="container">
       <div class="weather-box">
-        <form id="search-form" class="mb-3">
-          <div class="row row-edit">
+        <div class="row row-edit">
+          <form id="search-form" class="mb-3">
             <div class="col-5">
               <input
                 type="search"
@@ -39,20 +39,17 @@
                 autocomplete="off"
               />
             </div>
-            <!-- I added a form element here. -->
+          </form>
 
-            <div class="col-4">
-              <button
-                type="submit"
-                value="Search"
-                class="s-icon"
-                id="geo-input"
-              >
-                <i class="fas fa-map-marker-alt"></i>
-              </button>
-            </div>
+          <!-- I added a form element here. -->
+
+          <div class="col-4 location-button">
+            <button type="click" class="s-icon" id="geo-input">
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
           </div>
-        </form>
+        </div>
+
         <div class="weather-content">
           <h2 id="city"></h2>
           <h1 id="temp"></h1>
